@@ -11,6 +11,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     <link href="main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
@@ -28,24 +30,61 @@
         <li class="list-group-item">A third item</li>
         <li class="list-group-item">A fourth item</li>
         <li class="list-group-item">And a fifth one</li>
-      </ul> 
+      </ul>    
+      <button id="test-btn">버튼</button>
+      <button id="test-btn2">모달</button>
+
+      <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
+          <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+      </div> 
+
+
 
       <script>
-            //밑에 코드는 쿼리중 list-group을 찾는 셀렉터이다
-            //하지만 맨 위에 나오는 한개만 찾아준다
-        document.querySelector('.list-group')
+
+            $('.#test-btn2').on('click',function(){
+                $('black-bg').addClass('show');
+           
+            })
 
 
+          //on은 addEventListener()
+          //$셀렉터로 찾으면 jquery문법만 가능
+    $('.#test-btn').on('click',function(){
+    $('.hello').slideUp();
+    })
 
-//밑에 코드는 버튼을 눌렀을 때 ul class에 show를 추가시킨다
-        document.getElementsByClassName('navbar-toggler')[0].addEventListener
-        ('click',function(){                                        //toggle은 if 1 = 0 , 0 = 1
+
+          
+          //jquery $는 셀렉터 .html은 inner html
+          //jquery 셀렉터는 모든 name을 선택한다
+       //   $('.hello').html('뀨');
+         // $('.hello').css('color','red');
+          
+          
+          //밑에 코드는 쿼리중 list-group을 찾는 셀렉터이다
+          //하지만 맨 위에 나오는 한개만 찾아준다
+          //만약 다 찾고싶으면 Selector뒤에 All을 쓰면 된당
+          document.querySelector('.list-group')
+          
+          
+          
+          //밑에 코드는 버튼을 눌렀을 때 ul class에 show를 추가시킨다
+          document.getElementsByClassName('navbar-toggler')[0].addEventListener
+          ('click',function(){                                        //toggle은 if 1 = 0 , 0 = 1
             document.getElementsByClassName('list-group')[0].classList.toggle('show');
-                    
+            
         })
+
+        
 
 
       </script>
+
+
 
 
 </body>
