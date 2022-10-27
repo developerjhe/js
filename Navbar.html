@@ -45,15 +45,22 @@
 
       <script>
 
-            $('.#test-btn2').on('click',function(){
-                $('black-bg').addClass('show');
-           
+            $('#test-btn2').on('click',function(){
+                $('.black-bg').show();
+                $('.white-bg').show();
+            
             })
+
+                $('#close').on('click',function(){
+                        $('.black-bg').hide();
+                        $('.white-bg').hide();
+                })
+
 
 
           //on은 addEventListener()
           //$셀렉터로 찾으면 jquery문법만 가능
-    $('.#test-btn').on('click',function(){
+    $('#test-btn').on('click',function(){
     $('.hello').slideUp();
     })
 
